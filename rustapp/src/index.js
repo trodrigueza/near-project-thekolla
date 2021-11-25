@@ -21,9 +21,13 @@ document.querySelector('form').onsubmit = async (event) => {
 
   try {
     // make an update call to the smart contract
-    await window.contract.set_greeting({
+    await window.contract.transaction({
       // pass the value that the user entered in the greeting field
-      message: greeting.value
+      ThekollaSays: 'Succeded',
+      Transferred: '0.5 Nears',
+      Receiver: 'thekolla.testnet',
+      Signer: window.accountId
+      // greeting.value
     })
   } catch (e) {
     alert(

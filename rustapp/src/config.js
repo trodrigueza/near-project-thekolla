@@ -1,4 +1,4 @@
-const CONTRACT_NAME = process.env.CONTRACT_NAME ||'rustapp'
+const CONTRACT_NAME = process.env.CONTRACT_NAME ||'app.thekolla.testnet'
 
 function getConfig(env) {
   switch (env) {

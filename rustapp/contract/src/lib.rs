@@ -28,7 +28,7 @@ impl KContract {
 
     pub fn transaction(&self) {
         let amount: u128 = 500_000_000_000_000_000_000_000; // 0.5 $NEAR as yoctoNEAR
-        let account_id = "thekolla.testnet".parse().unwrap();
+        let account_id = "app.thekolla.testnet".parse().unwrap();
         Promise::new(account_id).transfer(amount);
     }
 }
