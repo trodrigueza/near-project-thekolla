@@ -26,8 +26,8 @@ document.querySelector('form').onsubmit = async (event) => {
       ThekollaSays: 'Succeded',
       Transferred: '0.5 Nears',
       Receiver: 'thekolla.testnet',
-      Signer: window.accountId
-      // greeting.value
+      Signer: window.accountId,
+      CID: greeting.value + '.ipfs.dweb.link'
     })
   } catch (e) {
     alert(
