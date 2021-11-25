@@ -4,15 +4,15 @@
 
 html {
   --bg: #efefef;
-  --fg: #1e1e1e;
+  --fg: #ffffff;
   --gray: #555;
   --light-gray: #ccc;
   --shadow: #e6e6e6;
   --success: rgb(90, 206, 132);
-  --primary: #FF585D;
+  --primary: rgb(157,255,0);
   --secondary: #0072CE;
 
-  background-color: var(--bg);
+  background-color:rgb(17, 20, 44);
   color: var(--fg);
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
   font-size: calc(0.9em + 0.5vw);
@@ -30,7 +30,7 @@ main {
 }
 
 h1 {
-  background-image: url(assets/logo-black.svg);
+  background-image: url(assets/logo.png);
   background-position: center 1em;
   background-repeat: no-repeat;
   background-size: auto 1.5em;
@@ -61,10 +61,10 @@ button, input {
 }
 
 button {
-  background-color: var(--secondary);
+  background-color: var(--primary);
   border-radius: 5px;
   border: none;
-  color: #efefef;
+  color: #000000;
   cursor: pointer;
   padding: 0.3em 0.75em;
   transition: transform 30ms;
@@ -117,11 +117,11 @@ fieldset {
 }
 
 input {
-  background-color: var(--shadow);
+  background-color: white;
   border: none;
   border-radius: 5px 0 0 5px;
-  caret-color: var(--primary);
-  color: inherit;
+  caret-color: black;
+  color: black;
   padding: 0.25em 1em;
 }
 input::selection {
@@ -141,15 +141,13 @@ li {
 }
 
 aside {
-  animation: notify ease-in-out 10s;
-  background-color: var(--shadow);
+  background-color: blueviolet;
   border-radius: 5px;
-  bottom: 0;
   font-size: 0.8em;
   margin: 1em;
   padding: 1em;
   position: fixed;
-  transform: translateY(10em);
+  bottom: 0;
   right: 0;
 }
 aside footer {
@@ -162,27 +160,50 @@ aside footer *:first-child {
   color: var(--success);
 }
 aside footer *:last-child {
-  color: var(--gray);
-}
-@keyframes notify {
-  0% { transform: translateY(10em) }
-  5% { transform: translateY(0) }
-  95% { transform: translateY(0) }
-  100% { transform: translateY(10em) }
+  color: white;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    --bg: #1e1e1e;
-    --fg: #efefef;
-    --gray: #aaa;
-    --shadow: #2a2a2a;
-    --light-gray: #444;
+
+#footer
+  {
+      text-align: center;
+      font-size: min(100%, 1.5vmin);
+      font-family: courier;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: rgb(157, 255, 0);
+      color: rgb(0, 0, 0);
+      
   }
-  h1 {
-    background-image: url(assets/logo-white.svg);
+
+  #header
+  {
+      text-align: center;
+      font-size: min(100%, 1.5vmin);
+      font-family: courier;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      background-color: rgb(157, 255, 0);
+      color: rgb(0, 0, 0);
+      
   }
-  input:focus {
-    box-shadow: 0 0 10em rgba(255, 255, 255, 0.02) inset;
+
+  #colorgreen
+  {
+    color: var(--primary)
   }
-}
+
+  #kolla-button
+  {
+      background-color: white;
+      border-radius: 5px;
+      border: none;
+      color: #000000;
+      cursor: pointer;
+      padding: 0.3em 0.75em;
+      transition: transform 30ms;
+  }
