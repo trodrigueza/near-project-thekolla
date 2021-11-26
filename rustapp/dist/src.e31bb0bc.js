@@ -17326,7 +17326,7 @@ __exportStar(require("./browser-connect"), exports);
 require("error-polyfill");
 
 },{"./key_stores/browser-index":"../node_modules/near-api-js/lib/key_stores/browser-index.js","./common-index":"../node_modules/near-api-js/lib/common-index.js","./browser-connect":"../node_modules/near-api-js/lib/browser-connect.js","error-polyfill":"../node_modules/error-polyfill/index.js"}],"config.js":[function(require,module,exports) {
-var CONTRACT_NAME = "dev-1637882482629-71795753285821" || 'app.thekolla.testnet';
+var CONTRACT_NAME = "dev-1637894486255-46025395721194" || 'app.thekolla.testnet';
 
 function getConfig(env) {
   switch (env) {
@@ -17519,7 +17519,7 @@ document.querySelector('form').onsubmit = /*#__PURE__*/function () {
               Transferred: '0.5 Nears',
               Receiver: 'thekolla.testnet',
               Signer: window.accountId,
-              CID: greeting.value + '.ipfs.dweb.link'
+              CID: "https://ipfs.io/ipfs/".concat(greeting.value)
             });
 
           case 6:
@@ -17604,8 +17604,7 @@ function signedInFlow() {
 
 function fetchGreeting() {
   return _fetchGreeting.apply(this, arguments);
-} // `nearInitPromise` gets called on page load
-
+}
 
 function _fetchGreeting() {
   _fetchGreeting = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
@@ -17624,7 +17623,7 @@ function _fetchGreeting() {
               // set divs, spans, etc
               el.innerText = currentGreeting; // set input elements
 
-              el.value = currentGreeting;
+              el.value = currentGreeting; //obtener codigo del nft y regresarlo hacia el html.
             });
 
           case 4:
@@ -17637,8 +17636,20 @@ function _fetchGreeting() {
   return _fetchGreeting.apply(this, arguments);
 }
 
+function ShowImage() {
+  var hash = "https://ipfs.io/ipfs/".concat(greeting.value);
+  var imagen_mostrar = hash;
+  var img = document.createElement("img");
+  img.src = imagen_mostrar;
+  document.getElementById("Espacio_imagenes").appendChild(img);
+} // `nearInitPromise` gets called on page load
+
+
 window.nearInitPromise = (0, _utils.initContract)().then(function () {
-  if (window.walletConnection.isSignedIn()) signedInFlow();else signedOutFlow();
+  if (window.walletConnection.isSignedIn()) {
+    signedInFlow();
+    ShowImage();
+  } else signedOutFlow();
 }).catch(console.error);
 },{"regenerator-runtime/runtime":"../node_modules/regenerator-runtime/runtime.js","./utils":"utils.js","./config":"config.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -17668,7 +17679,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63286" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63752" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

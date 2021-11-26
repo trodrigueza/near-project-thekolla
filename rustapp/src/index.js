@@ -27,7 +27,7 @@ document.querySelector('form').onsubmit = async (event) => {
       Transferred: '0.5 Nears',
       Receiver: 'thekolla.testnet',
       Signer: window.accountId,
-      CID: greeting.value + '.ipfs.dweb.link'
+      CID: `https://ipfs.io/ipfs/${greeting.value}`
     })
   } catch (e) {
     alert(
@@ -108,19 +108,23 @@ async function fetchGreeting() {
     
        //obtener codigo del nft y regresarlo hacia el html.
 
-    const hash_imagen = currentGreeting;
-    const imagen_mostrar = "https://ipfs:io/ipfs/" + hash_imagen;
-    const etiqueta_imagen = document.createElement("img");
-    etiqueta_imagen.src = imagen_mostrar;
-    const espacio_nuevo = document.getElementById("Espacio_imagenes");
-    espacio_nuevo.appendChild(etiqueta_imagen);
   })
+}
+
+function ShowImage() {
+    var hash = `https://ipfs.io/ipfs/${greeting.value}`;
+    var imagen_mostrar = hash;
+    var img = document.createElement("img");
+    img.src = imagen_mostrar;
+    document.getElementById("Espacio_imagenes").appendChild(img);
 }
 
 // `nearInitPromise` gets called on page load
 window.nearInitPromise = initContract()
   .then(() => {
-    if (window.walletConnection.isSignedIn()) signedInFlow()
-    else signedOutFlow()
+    if (window.walletConnection.isSignedIn()) {
+      signedInFlow()
+      ShowImage();
+    } else signedOutFlow()
   })
   .catch(console.error)
