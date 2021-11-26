@@ -25,6 +25,11 @@ impl KContract {
         let account_id = env::signer_account_id();
         env::log(format!("{} just uploaded NTF Image with cid: {}", account_id, cid).as_bytes());
     }
+    
+      pub fn get_cid(&self, account_id:String) -> Option<String> {
+      return self.records.get(&account_id);
+   // env::state_read(self);
+  }
 
     pub fn transaction(&self) {
         let amount: u128 = 500_000_000_000_000_000_000_000; // 0.5 $NEAR as yoctoNEAR
