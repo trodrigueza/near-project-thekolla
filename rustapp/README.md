@@ -1,4 +1,4 @@
-The kolla
+NEAR FT Kollage
 ==================
 
 The kolla is a collage web working under near smart contracts.
