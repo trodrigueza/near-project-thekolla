@@ -1,8 +1,8 @@
-The kolla
+NEAR FT Kollage
 ==================
 
-The kolla is a collage web working under near smart contracts.
-For the ammount of 0.5 NEAR you can upload an NFT image stored in nft.storage to The kolla.
+The kolla is a dapp working under near smart contracts.
+For 0.5 NEAR you can upload an NFT image stored in nft.storage to The kolla.
 For the moment, the NEARS are transfered to our testnet account. However we are looking forward to write a contract which guarantees a charity end for the assets. 
 
 
