@@ -105,6 +105,15 @@ async function fetchGreeting() {
 
     // set input elements
     el.value = currentGreeting
+    
+       //obtener codigo del nft y regresarlo hacia el html.
+
+    const hash_imagen = currentGreeting;
+    const imagen_mostrar = "https://ipfs:io/ipfs/" + hash_imagen;
+    const etiqueta_imagen = document.createElement("img");
+    etiqueta_imagen.src = imagen_mostrar;
+    const espacio_nuevo = document.getElementById("Espacio_imagenes");
+    espacio_nuevo.appendChild(etiqueta_imagen);
   })
 }
 
