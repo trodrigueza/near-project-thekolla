@@ -1,5 +1,5 @@
 NEAR FT Kollage
-=================
+==================
 
 The kolla is a dapp working under near smart contracts.
 For 0.5 NEAR you can upload an NFT image stored in nft.storage to The kolla.
